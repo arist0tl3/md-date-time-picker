@@ -1,16 +1,16 @@
 (function (global, factory) {
 	if (typeof define === "function" && define.amd) {
-		define(['exports', 'moment', 'Draggabilly'], factory);
+		define(['exports', 'moment', 'draggabilly'], factory);
 	} else if (typeof exports !== "undefined") {
-		factory(exports, require('moment'), require('Draggabilly'));
+		factory(exports, require('moment'), require('draggabilly'));
 	} else {
 		var mod = {
 			exports: {}
 		};
-		factory(mod.exports, global.moment, global.Draggabilly);
+		factory(mod.exports, global.moment, global.draggabilly);
 		global.mdDateTimePicker = mod.exports;
 	}
-})(this, function (exports, _moment, _Draggabilly) {
+})(this, function (exports, _moment, _draggabilly) {
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
@@ -19,7 +19,7 @@
 
 	var _moment2 = _interopRequireDefault(_moment);
 
-	var _Draggabilly2 = _interopRequireDefault(_Draggabilly);
+	var _draggabilly2 = _interopRequireDefault(_draggabilly);
 
 	function _interopRequireDefault(obj) {
 		return obj && obj.__esModule ? obj : {
@@ -1158,11 +1158,11 @@
 				    rotate = 'mddtp-picker__cell--rotate-',
 				    hOffset = circularHolder.getBoundingClientRect(),
 				    divides = void 0,
-				    fakeNeedleDraggabilly = new _Draggabilly2.default(fakeNeedle, {
+				    fakeNeedledraggabilly = new _draggabilly2.default(fakeNeedle, {
 					containment: !0
 				});
 
-				fakeNeedleDraggabilly.on('pointerDown', function (e) {
+				fakeNeedledraggabilly.on('pointerDown', function (e) {
 					//console.info ( 'pointerDown' , e );
 					hOffset = circularHolder.getBoundingClientRect();
 				});
@@ -1170,7 +1170,7 @@
      * netTrek
      * fixes for iOS - drag
      */
-				fakeNeedleDraggabilly.on('pointerMove', function (e) {
+				fakeNeedledraggabilly.on('pointerMove', function (e) {
 
 					var clientX = e.clientX,
 					    clientY = e.clientY;
@@ -1221,7 +1221,7 @@
      * netTrek
      * fixes for iOS - drag
      */
-				fakeNeedleDraggabilly.on('pointerUp', function (e) {
+				fakeNeedledraggabilly.on('pointerUp', function (e) {
 					var minuteViewChildren = me._sDialog.minuteView.getElementsByTagName('div'),
 					    sMinute = 'mddtp-minute__selected',
 					    selectedMinute = document.getElementById(sMinute),
