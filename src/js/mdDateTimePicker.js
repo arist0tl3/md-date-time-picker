@@ -10,7 +10,7 @@
 * import necessary components
 */
 import moment from 'moment'
-import Draggabilly from 'draggabilly'
+import draggabilly from 'draggabilly'
 
 class mdDateTimePicker {
 	/**
@@ -1191,10 +1191,10 @@ class mdDateTimePicker {
 		let rotate = 'mddtp-picker__cell--rotate-'
 		let hOffset = circularHolder.getBoundingClientRect()
 		let divides
-		let fakeNeedleDraggabilly = new Draggabilly(fakeNeedle, {
+		let fakeNeedledraggabilly = new draggabilly(fakeNeedle, {
 			containment: true
 		})
-		fakeNeedleDraggabilly.on('pointerDown', function( e ) {
+		fakeNeedledraggabilly.on('pointerDown', function( e ) {
 			//console.info ( 'pointerDown' , e );
 			hOffset = circularHolder.getBoundingClientRect()
 		})
@@ -1202,7 +1202,7 @@ class mdDateTimePicker {
 		 * netTrek
 		 * fixes for iOS - drag
 		 */
-		fakeNeedleDraggabilly.on('pointerMove', function(e) {
+		fakeNeedledraggabilly.on('pointerMove', function(e) {
 
 			var clientX = e.clientX
 			var clientY = e.clientY
@@ -1284,8 +1284,8 @@ class mdDateTimePicker {
 			me._sDialog.sDate.minutes(divides)
 		}
 
-		fakeNeedleDraggabilly.on('pointerUp', onDragEnd);
-		fakeNeedleDraggabilly.on('dragEnd', onDragEnd);
+		fakeNeedledraggabilly.on('pointerUp', onDragEnd);
+		fakeNeedledraggabilly.on('dragEnd', onDragEnd);
 	}
 
 	/**
